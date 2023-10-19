@@ -1,15 +1,4 @@
 
-// vocal, drum, bass, and other are volumes ranging from 0 to 100
-
-// function mouseClicked() {
-//   if (song.isPlaying()){
-//     song.pause()
-//     noLoop()
-//   } else {
-//     song.play()
-//     loop()
-//   }
-// }
 let firstRun = true
 let ball = [];
 let b_ball = [];
@@ -103,14 +92,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     ellipse(bassWidth+100, height/8, balleffect);//greenballbg
 
 
-    // noStroke();
-    // fill(114,163,136,70);
-    // ellipse(bassWidth+100, height/8, balleffect*5);//greenballbg
-
- 
-  //  noStroke();
-  //   fill(241,242,242,100);
-  //   ellipse(bassWidth+400,height/8,balleffect*5)//whitw1bg
 
     stroke(228,188,64)
     fill(228,188,64);
@@ -121,9 +102,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     ellipse(bassWidth2-120, height/4, balleffect-25)//yellowballbg
 
 
-    // noStroke();
-    // fill(228,188,6,30);
-    // ellipse(bassWidth2-120, height/4, balleffect*5)//yellowballbg
 
     stroke(168,62,72)
     fill(168,62,72);
@@ -133,11 +111,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     fill(168,62,72,50);
     ellipse(bassWidth2-600, height/1.25, balleffect+5)//redballbg
 
-    // noStroke();
-    // fill(168,62,72,30);
-    // ellipse(bassWidth2-600, height/1.25, balleffect*5)//redballbg
-
-
+ 
     stroke(168,62,72)
     fill(168,62,72);
     ellipse(bassWidth+700, height/2.5, ballSize/2);//redball2
@@ -162,10 +136,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     fill(201,115,67,50);
     ellipse(bassWidth2-600, height/3, balleffect/2);//orangeball
 
-
-    // noStroke();
-    // fill(241,242,242,100);
-    // ellipse(bassWidth+300,height/1.25,balleffect*5)//whitw1bg
 
     stroke(80,61,90,)
     fill(80,61,90,);
@@ -257,13 +227,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       
       pop();
 
-      // let BG = int(map(0,100,0,1));
-      // console.log(BG);
-      // push();
-      // scale(1.1);
-      // image(paper[BG],0,-100);
-      
-      // pop();
+    
 
       let volume = map(bass,0,100,10,90);
     
