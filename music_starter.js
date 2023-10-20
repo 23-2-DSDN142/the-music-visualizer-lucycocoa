@@ -2,7 +2,7 @@
 let firstRun = true
 let ball = [];
 let b_ball = [];
-let paper = [];
+let paper = []; 
 let disco = [];
 let p_ball = [];
 
@@ -47,7 +47,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
       
-      paper.push(loadImage('paper_0.png'));
+      paper.push(loadImage('paper.png'));
      
 
 
@@ -59,9 +59,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   if (song.currentTime()>=0 && song.currentTime()<39.3){
     // if (song.currentTime()>=0 && song.currentTime()<1){
 
-    background(238,237,230,30);
-       
+    background(230,223,212,50);
+    
+    
+     
   
+   
       
   
     fill(0);
@@ -160,16 +163,16 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     noStroke();
     fill(201,115,67,50);
     ellipse(bassWidth+500,height/15,balleffect/2-10)
-
+    
 
     let BG = int(map(0,100,0,1));
       console.log(BG);
       push();
-      scale(1.1);
-      image(paper[BG],0,-100);
+      scale(1.4);
+      image(paper[BG],0,5);
       
       pop();
-   
+      
     
   }
 
@@ -229,25 +232,27 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
     
 
-      let volume = map(bass,0,100,10,90);
+      let volume = map(bass,0,100,0,90);
     
       // let volumeWidth = 50;
       
    
       for(let i =1; i <=volume ; i++){
         let volumeStep = i *8;
-        strokeWeight(2)
+        strokeWeight(5)
         
         strokeCap(SQUARE);
-        stroke(255,drum,130,90)
-        line(40,volumeStep+500,60,volumeStep+500);
-        line(80,volumeStep+400,100,volumeStep+400);
-        line(120,volumeStep+300,140,volumeStep+300);
-        line(160,volumeStep+200,180,volumeStep+200);
-        line(840,volumeStep+200,860,volumeStep+200);
-        line(880,volumeStep+300,900,volumeStep+300);
-        line(920,volumeStep+400,940,volumeStep+400);
-        line(960,volumeStep+500,980,volumeStep+500);
+        stroke(255,drum,130,120)
+        line(40,volumeStep+400,60,volumeStep+400);
+        line(80,volumeStep+300,100,volumeStep+300);
+        line(120,volumeStep+200,140,volumeStep+200);
+        line(160,volumeStep+100,180,volumeStep+100);
+        stroke(130,230,drum,120)
+        // stroke(230,230,drum,90)
+        line(840,volumeStep+100,860,volumeStep+100);
+        line(880,volumeStep+200,900,volumeStep+200);
+        line(920,volumeStep+300,940,volumeStep+300);
+        line(960,volumeStep+400,980,volumeStep+400);
 
       
        
@@ -283,6 +288,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let ballSize = 60;
       let balleffect = map(bass,0,100,0,ballSize+150)
       let bassWidth2 = map(bass, 0,100,700,900)
+      let whitelight = map(other,0,100,0,800)
       
       stroke(114,163,136)
       fill(114,163,136);
@@ -409,8 +415,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
   
       fill(241,242,242,30);
-      ellipse(bassWidth2-700, height/2.2, balleffect)
-      ellipse(bassWidth+800, height-100, balleffect)//whiteeffect
+      ellipse(bassWidth2-700, height/2.2, whitelight)
+      ellipse(bassWidth+800, height-100, whitelight)//whiteeffect
   
   
   
@@ -427,27 +433,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
       
 
-      stroke(255,90);
-    strokeWeight(1)
-    line(0,height/15,1000,height/15)
-
-    line(0,height/8,1000,height/8)
-
-    line(0,height/4,1000,height/4)
-
-    line(0,height-290,1000,height-290)
-
-    line(0,height/2.5,1000,height/2.5)
-
-    line(0,height/3,1000,height/3)
-
-    line(0,height/1.9,1000,height/1.9)
-
-    line(0,height/1.5,1000,height/1.5)
-
-    line(0,height/1.25,1000,height/1.25)
-
-    line(0,height-80,1000,height-80)
+      
 
     
     let whiteCircle = map(bass,0,100,50,200);
@@ -455,7 +441,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     for(let ii = 1; ii <= 18; ii++){
       let yStep = ii*50
       for (let i = 1; i <= 19; i++){
-        noFill();
+        stroke(255);
+        strokeWeight(0.5)
+        fill(255,20);
         ellipse(51*i, yStep, whiteCircle)
       }
     }
@@ -464,10 +452,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
       for(let i =1; i <=volume ; i++){
         let volumeStep = i *7;
-        strokeWeight(3)
+        strokeWeight(5)
         
         strokeCap(SQUARE);
-        stroke(255)
+        stroke('#deacac')
         line(480,508-volumeStep,510,508-volumeStep);
         line(480,500+volumeStep,510,500+volumeStep);
         
@@ -477,10 +465,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
       for(let i =1; i <=volume1 ; i++){
         let volumeStep = i *7;
-        strokeWeight(2)
+        strokeWeight(3)
         
         strokeCap(SQUARE);
-        stroke(255)
+        stroke('#deacac')
         line(430,508-volumeStep,460,508-volumeStep);
         line(430,500+volumeStep,460,500+volumeStep);
         line(530,508-volumeStep,560,508-volumeStep);
@@ -491,10 +479,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let volume2 = map(vocal,0,100,10,50);
       for(let i =1; i <=volume2 ; i++){
         let volumeStep = i *7;
-        strokeWeight(3)
+        strokeWeight(5)
         
         strokeCap(SQUARE);
-        stroke(255)
+        stroke('#deacac')
         line(380,508-volumeStep,410,508-volumeStep);
         line(380,500+volumeStep,410,500+volumeStep);
         line(580,508-volumeStep,610,508-volumeStep);
@@ -505,10 +493,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let volume3 = map(vocal,0,100,10,40);
       for(let i =1; i <=volume3 ; i++){
         let volumeStep = i *7;
-        strokeWeight(2)
+        strokeWeight(3)
         
         strokeCap(SQUARE);
-        stroke(255)
+        stroke('#deacac')
         line(330,508-volumeStep,360,508-volumeStep);
         line(330,500+volumeStep,360,500+volumeStep);
         line(630,508-volumeStep,660,508-volumeStep);
@@ -519,10 +507,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let volume4 = map(vocal,0,100,10,30);
       for(let i =1; i <=volume4 ; i++){
         let volumeStep = i *7;
-        strokeWeight(3)
+        strokeWeight(5)
         
         strokeCap(SQUARE);
-        stroke(255)
+        stroke('#deacac')
         line(280,508-volumeStep,310,508-volumeStep);
         line(280,500+volumeStep,310,500+volumeStep);
         line(680,508-volumeStep,710,508-volumeStep);
@@ -534,10 +522,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let volume5 = map(vocal,0,100,10,20);
       for(let i =1; i <=volume5 ; i++){
         let volumeStep = i *7;
-        strokeWeight(2)
+        strokeWeight(3)
         
         strokeCap(SQUARE);
-        stroke(255)
+        stroke('#deacac')
         line(230,508-volumeStep,260,508-volumeStep);
         line(230,500+volumeStep,260,500+volumeStep);
         line(730,508-volumeStep,760,508-volumeStep);
@@ -548,7 +536,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let volume6 = map(vocal,0,100,10,15);
       for(let i =1; i <=volume6 ; i++){
         let volumeStep = i *7;
-        strokeWeight(3)
+        strokeWeight(5)
 
         line(180,508-volumeStep,210,508-volumeStep);
         line(180,500+volumeStep,210,500+volumeStep);
@@ -559,7 +547,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
         let volume7 = map(vocal,0,100,8,12);
         for(let i =1; i <=volume7 ; i++){
           let volumeStep = i *7;
-          strokeWeight(2)
+          strokeWeight(3)
 
         line(130,508-volumeStep,160,508-volumeStep);
         line(130,500+volumeStep,160,500+volumeStep);
@@ -623,6 +611,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
       let ballSize = 60;
       let balleffect = map(bass,0,100,0,ballSize+150)
       let bassWidth2 = map(bass, 0,100,700,900)
+      let whitelight = map(other,0,100,0,800)
       
       stroke(114,163,136)
       fill(114,163,136);
@@ -749,8 +738,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
   
       fill(241,242,242,30);
-      ellipse(bassWidth2-700, height/2.2, balleffect)
-      ellipse(bassWidth+800, height-100, balleffect)//whiteeffect
+      ellipse(bassWidth2-700, height/2.2, whitelight)
+      ellipse(bassWidth+800, height-100, whitelight)//whiteeffect
   
   
   
